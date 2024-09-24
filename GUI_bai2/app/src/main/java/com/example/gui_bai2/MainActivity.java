@@ -2,6 +2,7 @@ package com.example.gui_bai2;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -59,13 +60,20 @@ public class MainActivity extends AppCompatActivity {
             try {
                 float c = Float.parseFloat(edtCel.getText().toString());
                 float f = c * 9.0f / 5 + 32;
-                edtCel.setText(String.format("%.2f", f));
+                edtFah.setText(String.format("%.2f", f));
             }
             catch(NumberFormatException ex) {
                 Toast.makeText(this, "Vui lòng nhập dữ liệu Celsius  ", Toast.LENGTH_SHORT).show();
             }
             catch(Exception ex) {
                 Toast.makeText(this, ex.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                edtCel.setText("");
+                edtFah.setText("");
             }
         });
     }

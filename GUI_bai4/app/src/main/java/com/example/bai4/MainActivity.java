@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
                 double BMI = W*1.0f/(H*H);
                 String duDoan = "";
                 if (BMI<18) duDoan = "Bạn gầy";
-                if (BMI<=24.9) duDoan = "Bạn bình thường";
-                if (BMI<=29.9) duDoan = "Bạn béo phì cấp độ 1";
-                if (BMI<=34.9) duDoan = "Bạn béo phì cấp độ 2";
+                else if (BMI<=24.9) duDoan = "Bạn bình thường";
+                else if (BMI<=29.9) duDoan = "Bạn béo phì cấp độ 1";
+                else if (BMI<=34.9) duDoan = "Bạn béo phì cấp độ 2";
                 else duDoan = "Bạn béo phì cấp độ 3";
 //                DecimalFormat dcf = new DecimalFormat("#.0");
 //                edtBMI.setText(dcf.format(BMI));
